@@ -372,6 +372,613 @@
 	opacity: 0.8;
 }
 
+/* Wedding Meme Generator */
+.meme-generator-section {
+	max-width: 1000px;
+	margin: 40px auto;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.meme-subtitle {
+	text-align: center;
+	color: #564861;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+.meme-creator {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+	align-items: start;
+}
+
+.meme-upload {
+	text-align: center;
+}
+
+.upload-area {
+	border: 3px dashed #674ea7;
+	border-radius: 15px;
+	padding: 40px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background: rgba(103, 78, 167, 0.05);
+}
+
+.upload-area:hover {
+	border-color: #e25c67;
+	background: rgba(226, 92, 103, 0.1);
+	transform: scale(1.02);
+}
+
+.upload-icon {
+	font-size: 48px;
+	margin-bottom: 15px;
+}
+
+.upload-area p {
+	color: #674ea7;
+	font-size: 16px;
+	margin: 0;
+}
+
+.meme-templates h3 {
+	color: #674ea7;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.template-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+}
+
+.template-item {
+	text-align: center;
+	padding: 20px;
+	background: rgba(103, 78, 167, 0.1);
+	border-radius: 15px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
+}
+
+.template-item:hover {
+	border-color: #674ea7;
+	transform: translateY(-5px);
+	background: rgba(103, 78, 167, 0.2);
+}
+
+.template-preview {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+
+.template-item p {
+	color: #564861;
+	margin: 0;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.meme-result {
+	grid-column: 1 / -1;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.generated-meme {
+	background: white;
+	border-radius: 15px;
+	padding: 20px;
+	margin: 20px 0;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	max-width: 400px;
+	margin: 20px auto;
+}
+
+.meme-actions {
+	display: flex;
+	gap: 15px;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.download-btn, .share-btn, .new-meme-btn {
+	padding: 12px 24px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.download-btn {
+	background: #28a745;
+	color: white;
+}
+
+.share-btn {
+	background: #007bff;
+	color: white;
+}
+
+.new-meme-btn {
+	background: #674ea7;
+	color: white;
+}
+
+.download-btn:hover, .share-btn:hover, .new-meme-btn:hover {
+	transform: scale(1.05);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Virtual Photo Booth */
+.photo-booth-section {
+	max-width: 1000px;
+	margin: 40px auto;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.booth-subtitle {
+	text-align: center;
+	color: #564861;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+.photo-booth {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+}
+
+.camera-container {
+	position: relative;
+	background: #000;
+	border-radius: 15px;
+	overflow: hidden;
+	aspect-ratio: 4/3;
+}
+
+#camera {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#photoCanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.filter-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	font-size: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.8;
+}
+
+.booth-controls {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.filter-selector h3 {
+	color: #674ea7;
+	margin-bottom: 15px;
+}
+
+.filter-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.filter-option {
+	text-align: center;
+	padding: 15px;
+	background: rgba(103, 78, 167, 0.1);
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
+}
+
+.filter-option:hover {
+	border-color: #674ea7;
+	transform: scale(1.05);
+}
+
+.filter-preview {
+	font-size: 32px;
+	margin-bottom: 8px;
+}
+
+.filter-option p {
+	color: #564861;
+	margin: 0;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.camera-controls {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.capture-btn, .start-camera-btn {
+	padding: 15px 25px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.capture-btn {
+	background: #e25c67;
+	color: white;
+}
+
+.start-camera-btn {
+	background: #674ea7;
+	color: white;
+}
+
+.capture-btn:hover, .start-camera-btn:hover {
+	transform: scale(1.05);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.photo-gallery {
+	grid-column: 1 / -1;
+	margin-top: 30px;
+}
+
+.photo-gallery h3 {
+	color: #674ea7;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 15px;
+}
+
+.gallery-item {
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	aspect-ratio: 1;
+}
+
+.gallery-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Wedding Prediction Game */
+.prediction-section {
+	max-width: 1000px;
+	margin: 40px auto;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.prediction-subtitle {
+	text-align: center;
+	color: #564861;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+.prediction-game {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 30px;
+}
+
+.prediction-categories {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+}
+
+.category {
+	text-align: center;
+	padding: 20px;
+	background: rgba(103, 78, 167, 0.1);
+	border-radius: 15px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
+}
+
+.category:hover {
+	border-color: #674ea7;
+	transform: translateY(-5px);
+	background: rgba(103, 78, 167, 0.2);
+}
+
+.category-icon {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+
+.category h3 {
+	color: #674ea7;
+	margin: 0 0 5px 0;
+	font-size: 16px;
+}
+
+.category p {
+	color: #564861;
+	margin: 0;
+	font-size: 12px;
+}
+
+.predictions-display {
+	background: rgba(103, 78, 167, 0.05);
+	border-radius: 15px;
+	padding: 20px;
+}
+
+#predictionTitle {
+	color: #674ea7;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.prediction-list {
+	display: grid;
+	gap: 10px;
+}
+
+.prediction-item {
+	padding: 15px;
+	background: white;
+	border-radius: 10px;
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.prediction-item:hover {
+	border-color: #674ea7;
+	transform: translateX(5px);
+}
+
+.prediction-item.selected {
+	border-color: #e25c67;
+	background: rgba(226, 92, 103, 0.1);
+}
+
+.prediction-results {
+	margin-top: 20px;
+}
+
+.submit-predictions {
+	padding: 15px 30px;
+	background: #674ea7;
+	color: white;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	width: 100%;
+}
+
+.submit-predictions:hover {
+	background: #e25c67;
+	transform: scale(1.05);
+}
+
+/* Couple Roast Section */
+.roast-section {
+	max-width: 1000px;
+	margin: 40px auto;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.roast-subtitle {
+	text-align: center;
+	color: #564861;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+.roast-content {
+	display: grid;
+	gap: 30px;
+}
+
+.roast-categories {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 15px;
+}
+
+.roast-category {
+	text-align: center;
+	padding: 20px;
+	background: rgba(103, 78, 167, 0.1);
+	border-radius: 15px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
+}
+
+.roast-category:hover {
+	border-color: #674ea7;
+	transform: translateY(-5px);
+	background: rgba(103, 78, 167, 0.2);
+}
+
+.roast-icon {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+
+.roast-category h3 {
+	color: #674ea7;
+	margin: 0 0 5px 0;
+	font-size: 16px;
+}
+
+.roast-category p {
+	color: #564861;
+	margin: 0;
+	font-size: 12px;
+}
+
+.roast-submissions {
+	background: rgba(103, 78, 167, 0.05);
+	border-radius: 15px;
+	padding: 20px;
+}
+
+.roast-submissions h3 {
+	color: #674ea7;
+	margin-bottom: 20px;
+}
+
+.submission-form {
+	display: grid;
+	gap: 15px;
+}
+
+.submission-form input,
+.submission-form textarea,
+.submission-form select {
+	padding: 12px;
+	border: 2px solid #e0e0e0;
+	border-radius: 10px;
+	font-size: 14px;
+	transition: border-color 0.3s ease;
+	font-family: inherit;
+}
+
+.submission-form input:focus,
+.submission-form textarea:focus,
+.submission-form select:focus {
+	outline: none;
+	border-color: #674ea7;
+}
+
+.submit-roast {
+	padding: 15px 30px;
+	background: #e25c67;
+	color: white;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.submit-roast:hover {
+	background: #674ea7;
+	transform: scale(1.05);
+}
+
+.roast-gallery {
+	background: rgba(103, 78, 167, 0.05);
+	border-radius: 15px;
+	padding: 20px;
+}
+
+.roast-gallery h3 {
+	color: #674ea7;
+	margin-bottom: 20px;
+}
+
+.roast-list {
+	display: grid;
+	gap: 15px;
+}
+
+.roast-item {
+	background: white;
+	border-radius: 10px;
+	padding: 15px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.roast-item h4 {
+	color: #674ea7;
+	margin: 0 0 10px 0;
+}
+
+.roast-item p {
+	color: #564861;
+	margin: 0;
+	line-height: 1.5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.meme-creator,
+	.photo-booth,
+	.prediction-game {
+		grid-template-columns: 1fr;
+	}
+	
+	.template-grid,
+	.filter-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	.prediction-categories,
+	.roast-categories {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	.meme-actions {
+		flex-direction: column;
+	}
+	
+	.gallery-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
 
 /*******************************/
 
