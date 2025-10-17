@@ -95,6 +95,71 @@ console.log(
     'color: #674ea7; font-size: 14pt; font-weight: bold'
 )
 
+// Wedding Background Animations
+function createWeddingAnimations() {
+    createFloatingHearts();
+    createSparkles();
+    createRomanticParticles();
+}
+
+function createFloatingHearts() {
+    const heartsContainer = document.getElementById('floatingHearts');
+    
+    setInterval(() => {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '💕';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+        
+        heartsContainer.appendChild(heart);
+        
+        setTimeout(() => {
+            heart.remove();
+        }, 10000);
+    }, 2000);
+}
+
+function createSparkles() {
+    const sparklesContainer = document.getElementById('sparkles');
+    
+    setInterval(() => {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.innerHTML = '✨';
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.top = Math.random() * 100 + '%';
+        sparkle.style.animationDelay = Math.random() * 2 + 's';
+        sparkle.style.fontSize = (Math.random() * 8 + 12) + 'px';
+        
+        sparklesContainer.appendChild(sparkle);
+        
+        setTimeout(() => {
+            sparkle.remove();
+        }, 3000);
+    }, 1500);
+}
+
+function createRomanticParticles() {
+    const particlesContainer = document.getElementById('romanticParticles');
+    
+    setInterval(() => {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 6 + 12) + 's';
+        particle.style.width = (Math.random() * 4 + 2) + 'px';
+        particle.style.height = particle.style.width;
+        
+        particlesContainer.appendChild(particle);
+        
+        setTimeout(() => {
+            particle.remove();
+        }, 18000);
+    }, 3000);
+}
+
 // Wedding Prediction Game
 const predictions = {
     ceremony: [
@@ -223,3 +288,9 @@ function createPredictionAnimation() {
         }, i * 150);
     }
 }
+
+// Initialize everything when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Start wedding animations
+    createWeddingAnimations();
+});
