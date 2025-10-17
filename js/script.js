@@ -15,7 +15,7 @@
  * Let's keep the sky-high status of this song untouched!
  *
  * When the website is backed up with a soul-stirring track, the feeling becomes absolutely surreal. 
- * Choose a heart-touching track! 🎵 ❤️
+ * Choose a heart-touching track! 🎵 
  *
  * Listen here: https://youtu.be/X0MDALpV29s
  *
@@ -26,7 +26,7 @@ $(document).on('click', function(){
 });
 
 // Set the date we're counting down to
-var countDownDate = new Date("Nov 29, 2024 00:00:00").getTime();
+var countDownDate = new Date("Nov 02, 2025 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
