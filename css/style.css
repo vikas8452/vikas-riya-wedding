@@ -372,6 +372,62 @@
 	opacity: 0.8;
 }
 
+/* Couple Photo Section */
+.couple-photo-section {
+	max-width: 800px;
+	margin: 40px auto;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.photo-container {
+	position: relative;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+	transition: transform 0.3s ease;
+}
+
+.photo-container:hover {
+	transform: scale(1.02);
+}
+
+.couple-photo {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+	object-position: center;
+	display: block;
+}
+
+.photo-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(transparent, rgba(0,0,0,0.7));
+	padding: 30px 20px 20px;
+	color: white;
+	text-align: center;
+}
+
+.photo-caption h3 {
+	font-size: 28px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+	font-family: 'Dancing Script', cursive;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.photo-caption p {
+	font-size: 16px;
+	margin: 0;
+	opacity: 0.9;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
 /* Wedding Prediction Game */
 .prediction-section {
 	max-width: 1000px;
@@ -494,6 +550,18 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+	.couple-photo {
+		height: 300px;
+	}
+	
+	.photo-caption h3 {
+		font-size: 24px;
+	}
+	
+	.photo-caption p {
+		font-size: 14px;
+	}
+	
 	.prediction-game {
 		grid-template-columns: 1fr;
 	}
