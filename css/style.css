@@ -343,8 +343,33 @@
 	position: absolute
 }
 
+/* Custom Signature Styles */
+.signature {
+	text-align: center;
+	margin: 40px 0;
+	padding: 20px;
+}
+
+.signature-text {
+	font-family: 'Dancing Script', cursive;
+	font-size: 18px;
+	color: #674ea7;
+	margin: 0 0 10px 0;
+	font-weight: bold;
+}
+
+.signature-line {
+	width: 100px;
+	height: 2px;
+	background: linear-gradient(45deg, #674ea7, #e25c67);
+	margin: 0 auto;
+	border-radius: 2px;
+}
+
+/* Enhanced Sakura Colors */
 .sakura {
-	background: #674ea7;
+	background: #e25c67 !important;
+	opacity: 0.8;
 }
 
 
@@ -386,6 +411,11 @@ img {
 	font-size: 60px;
 	margin: 32px 0;
 	color: #674ea7;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+	background: linear-gradient(45deg, #674ea7, #e25c67);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
 
 .title h2 {
@@ -438,6 +468,12 @@ img {
 	/* padding: 20px; */
 	text-align: center;
 	/* min-height:100%; */
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
+	padding: 40px;
+	box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+	backdrop-filter: blur(10px);
+	margin: 20px;
 }
 
 
@@ -456,6 +492,8 @@ body {
 	/* height: 100vh;
     width: 100%; */
 	flex-direction: column;
+	background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	min-height: 100vh;
 }
 
 .title {
