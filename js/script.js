@@ -97,28 +97,8 @@ console.log(
 
 // Wedding Background Animations
 function createWeddingAnimations() {
-    createFloatingHearts();
     createSparkles();
     createRomanticParticles();
-}
-
-function createFloatingHearts() {
-    const heartsContainer = document.getElementById('floatingHearts');
-    
-    setInterval(() => {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.innerHTML = '💕';
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
-        heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
-        
-        heartsContainer.appendChild(heart);
-        
-        setTimeout(() => {
-            heart.remove();
-        }, 10000);
-    }, 2000);
 }
 
 function createSparkles() {
