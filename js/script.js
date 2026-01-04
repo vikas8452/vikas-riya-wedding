@@ -269,8 +269,83 @@ function createPredictionAnimation() {
     }
 }
 
+// Video Section Scroll Animation
+function initVideoSection() {
+    const videoSection = document.getElementById('videoSection');
+    const video = document.getElementById('weddingVideo');
+    
+    if (!videoSection) return;
+    
+    // Intersection Observer for fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                videoSection.classList.add('visible');
+                // Optional: Play video when it comes into view
+                if (video && video.paused) {
+                    video.play().catch(e => {
+                        // Autoplay may be blocked, which is fine
+                        console.log('Video autoplay blocked:', e);
+                    });
+                }
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    observer.observe(videoSection);
+    
+    // Add sparkle effect on video hover
+    if (video) {
+        video.addEventListener('mouseenter', function() {
+            createVideoSparkles();
+        });
+        
+        // Ensure video plays smoothly
+        video.addEventListener('loadedmetadata', function() {
+            video.play().catch(e => {
+                console.log('Video autoplay preference:', e);
+            });
+        });
+    }
+}
+
+// Create sparkles around video on hover
+function createVideoSparkles() {
+    const videoSection = document.getElementById('videoSection');
+    if (!videoSection) return;
+    
+    for (let i = 0; i < 8; i++) {
+        setTimeout(() => {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.position = 'absolute';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.fontSize = (Math.random() * 12 + 16) + 'px';
+            sparkle.style.zIndex = '10';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.animation = 'sparkleAnimation 1.5s ease-in-out';
+            sparkle.style.color = '#ffd700';
+            
+            videoSection.querySelector('.video-wrapper').appendChild(sparkle);
+            
+            setTimeout(() => {
+                if (sparkle.parentNode) {
+                    sparkle.remove();
+                }
+            }, 1500);
+        }, i * 100);
+    }
+}
+
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
     // Start wedding animations
     createWeddingAnimations();
+    
+    // Initialize video section
+    initVideoSection();
 });

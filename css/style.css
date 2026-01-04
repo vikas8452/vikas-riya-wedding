@@ -432,6 +432,258 @@
 	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
+/* Video Section */
+.video-section {
+	max-width: 95%;
+	margin: 50px auto;
+	padding: 20px;
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 1s ease-out;
+}
+
+.video-section.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.video-container {
+	position: relative;
+	background: rgba(255, 255, 255, 0.95);
+	border-radius: 25px;
+	padding: 30px;
+	box-shadow: 0 15px 35px rgba(103, 78, 167, 0.3);
+	backdrop-filter: blur(10px);
+	border: 2px solid transparent;
+	background-image: 
+		linear-gradient(white, white),
+		linear-gradient(135deg, #674ea7, #e25c67, #ff69b4, #674ea7);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	animation: videoContainerGlow 3s ease-in-out infinite;
+}
+
+@keyframes videoContainerGlow {
+	0%, 100% {
+		box-shadow: 0 15px 35px rgba(103, 78, 167, 0.3);
+	}
+	50% {
+		box-shadow: 0 15px 45px rgba(226, 92, 103, 0.5);
+	}
+}
+
+.video-wrapper {
+	position: relative;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+	transition: transform 0.3s ease;
+}
+
+.video-wrapper:hover {
+	transform: scale(1.02);
+}
+
+.video-decoration {
+	position: absolute;
+	font-size: 28px;
+	z-index: 2;
+	animation: floatDecoration 4s ease-in-out infinite;
+	pointer-events: none;
+	filter: drop-shadow(0 0 8px rgba(226, 92, 103, 0.6));
+}
+
+.video-decoration-top-left {
+	top: -15px;
+	left: -15px;
+	animation-delay: 0s;
+}
+
+.video-decoration-top-right {
+	top: -15px;
+	right: -15px;
+	animation-delay: 1s;
+}
+
+.video-decoration-bottom-left {
+	bottom: -15px;
+	left: -15px;
+	animation-delay: 2s;
+}
+
+.video-decoration-bottom-right {
+	bottom: -15px;
+	right: -15px;
+	animation-delay: 1.5s;
+}
+
+@keyframes floatDecoration {
+	0%, 100% {
+		transform: translateY(0) rotate(0deg) scale(1);
+		opacity: 0.8;
+	}
+	50% {
+		transform: translateY(-10px) rotate(15deg) scale(1.1);
+		opacity: 1;
+	}
+}
+
+.wedding-video {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 20px;
+	position: relative;
+	z-index: 1;
+	min-height: 400px;
+	background: #000;
+}
+
+.video-overlay-glow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: radial-gradient(
+		circle at center,
+		rgba(226, 92, 103, 0.1) 0%,
+		transparent 70%
+	);
+	pointer-events: none;
+	z-index: 2;
+	animation: pulseGlow 3s ease-in-out infinite;
+	border-radius: 20px;
+}
+
+@keyframes pulseGlow {
+	0%, 100% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 0.8;
+	}
+}
+
+.video-caption {
+	text-align: center;
+	margin-top: 25px;
+	padding: 20px;
+}
+
+.video-title {
+	font-family: 'Dancing Script', cursive;
+	font-size: 42px;
+	color: #674ea7;
+	margin: 0 0 10px 0;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+	background: linear-gradient(45deg, #674ea7, #e25c67);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	animation: titleShimmer 3s ease-in-out infinite;
+}
+
+@keyframes titleShimmer {
+	0%, 100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+.video-subtitle {
+	font-family: 'Dancing Script', cursive;
+	font-size: 24px;
+	color: #564861;
+	margin: 0;
+	font-style: italic;
+	opacity: 0.8;
+}
+
+/* Video Section Responsive */
+@media (max-width: 768px) {
+	.video-section {
+		max-width: 98%;
+		margin: 30px auto;
+		padding: 10px;
+	}
+	
+	.video-container {
+		padding: 15px;
+		border-radius: 20px;
+	}
+	
+	.video-decoration {
+		font-size: 20px;
+	}
+	
+	.video-decoration-top-left {
+		top: -10px;
+		left: -10px;
+	}
+	
+	.video-decoration-top-right {
+		top: -10px;
+		right: -10px;
+	}
+	
+	.video-decoration-bottom-left {
+		bottom: -10px;
+		left: -10px;
+	}
+	
+	.video-decoration-bottom-right {
+		bottom: -10px;
+		right: -10px;
+	}
+	
+	.wedding-video {
+		min-height: 300px;
+		border-radius: 15px;
+	}
+	
+	.video-title {
+		font-size: 32px;
+	}
+	
+	.video-subtitle {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.video-section {
+		max-width: 100%;
+		margin: 20px auto;
+		padding: 5px;
+	}
+	
+	.video-container {
+		padding: 10px;
+		border-radius: 15px;
+	}
+	
+	.video-decoration {
+		font-size: 16px;
+	}
+	
+	.wedding-video {
+		min-height: 250px;
+		border-radius: 12px;
+	}
+	
+	.video-title {
+		font-size: 28px;
+	}
+	
+	.video-subtitle {
+		font-size: 18px;
+	}
+}
+
 /* Wedding Prediction Game */
 .prediction-section {
 	max-width: 1000px;
